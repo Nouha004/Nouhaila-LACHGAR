@@ -318,6 +318,76 @@ I Developed a web application for scholar internship application called Concentr
 
         </div> <!-- container -->
     </section>
+<style>
+/* ... (Your existing CSS) ... */
+
+.image-slider-full {
+    max-width: 100%;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden; /* This is key to hide overflowing images */
+}
+
+/* New container for the slides */
+.slides-full-container {
+    overflow: hidden;
+}
+
+.image-slider-full .slides-full {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.image-slider-full .slide-full {
+    flex: 0 0 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-slider-full img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+/* New button styles */
+.image-slider-full .prev-btn-full,
+.image-slider-full .next-btn-full {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 12px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    z-index: 10;
+}
+
+.image-slider-full .prev-btn-full {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.image-slider-full .next-btn-full {
+    right: 0;
+}
+
+.image-slider-full .prev-btn-full:hover,
+.image-slider-full .next-btn-full:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+</style>
+
       <!--====== Jquery js ======-->
     <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
     <script src="assets/js/vendor/modernizr-3.7.1.min.js"></script>
