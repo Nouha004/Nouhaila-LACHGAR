@@ -387,6 +387,34 @@ I Developed a web application for scholar internship application called Concentr
     background-color: rgba(0, 0, 0, 0.8);
 }
 </style>
+<script>
+const slidesFull = document.querySelector(".image-slider-full .slides-full");
+const prevBtnFull = document.querySelector(".prev-btn-full");
+const nextBtnFull = document.querySelector(".next-btn-full");
+
+let currentSlideFull = 0;
+const totalSlidesFull = slidesFull.children.length;
+
+function showSlideFull(index) {
+    if (index >= totalSlidesFull) {
+        currentSlideFull = 0;
+    } else if (index < 0) {
+        currentSlideFull = totalSlidesFull - 1;
+    } else {
+        currentSlideFull = index;
+    }
+    slidesFull.style.transform = `translateX(-${currentSlideFull * 100}%)`;
+}
+
+prevBtnFull.addEventListener("click", () => {
+    showSlideFull(currentSlideFull - 1);
+});
+
+nextBtnFull.addEventListener("click", () => {
+    showSlideFull(currentSlideFull + 1);
+});
+</script>
+
 
       <!--====== Jquery js ======-->
     <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
